@@ -16,7 +16,12 @@ Now you can retrieve your token with the included file `get_token.py`.
 You should be able to start it with `python get_token.py`. After granting permissions, you should end up with a file named `token.pickle`. Move this file to the `scrapy_google_sheets_example/resources` folder. 
 
 ## Settings
+In `scrapy_google_sheets_example/settings.py` you will have to set the ID of the Spreadsheet you want to save your data to. You can get the ID from the url. 
+For example, for this url https://docs.google.com/spreadsheets/d/1eX8ftT1jKY2MyUcaHFV-Oo93qGP1NgHdcC-4MFm6UUc/edit#gid=0 the ID is **1eX8ftT1jKY2MyUcaHFV-Oo93qGP1NgHdcC-4MFm6UUc**. 
+So the code would look like this:
+`GOOGLE_SHEET_ID = '1eX8ftT1jKY2MyUcaHFV-Oo93qGP1NgHdcC-4MFm6UUc'`
 
+You also need to set a range of cells for the Pipeline as `GOOGLE_SHEETS_RANGE`. In this example I used the range `A:B`, which means that the results will be written in the cells A and B. 
 
 ## Starting the spider
 The included spider is an example that gets quotes and their authors from [quotes.toscrape.com](http://quotes.toscrape.com/).
